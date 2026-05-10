@@ -72,13 +72,34 @@
   .icon-grape { background: #F0EBF8; }
   .icon-flower { background: #FEF5E0; }
   .icon-lime { background: #EDF7E8; }
+  .icon-tangerine { background: #FEF0E6; }
   .service-card h3 { font-size: 1.125rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.625rem; letter-spacing: -0.01em; }
   .service-card p { font-size: 0.9375rem; color: var(--text-mid); line-height: 1.65; font-weight: 300; }
-  .why { background: var(--warm-white); padding: 6rem 2rem; }
+  .service-card .card-link { display: inline-flex; align-items: center; gap: 0.375rem; margin-top: 1rem; font-size: 0.875rem; font-weight: 500; color: var(--bondi); text-decoration: none; transition: gap 0.2s; }
+  .service-card .card-link:hover { gap: 0.625rem; }
+
+  /* TOOLS SECTION */
+  .tools { background: var(--warm-white); padding: 6rem 2rem; }
+  .tools-inner { max-width: 1100px; margin: 0 auto; }
+  .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem; margin-top: 3.5rem; }
+  .tool-card { background: white; border-radius: 1.25rem; padding: 2rem; border: 1px solid rgba(0,0,0,0.06); transition: all 0.3s; display: flex; gap: 1.5rem; align-items: flex-start; }
+  .tool-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); border-color: rgba(0,149,182,0.2); }
+  .tool-icon { width: 56px; height: 56px; border-radius: 14px; background: var(--bondi-light); display: flex; align-items: center; justify-content: center; font-size: 26px; flex-shrink: 0; }
+  .tool-info { flex: 1; }
+  .tool-info h3 { font-size: 1.0625rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.375rem; }
+  .tool-info p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.6; font-weight: 300; margin-bottom: 1rem; }
+  .tool-meta { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+  .tool-badge { font-size: 0.6875rem; font-weight: 600; padding: 0.2rem 0.625rem; border-radius: 2rem; background: #EDF7E8; color: #3B6D11; }
+  .tool-badge.free { background: #EDF7E8; color: #3B6D11; }
+  .tool-badge.mac { background: var(--bondi-light); color: var(--bondi); }
+  .tool-download { display: inline-flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; font-weight: 500; color: var(--bondi); text-decoration: none; transition: gap 0.2s; }
+  .tool-download:hover { gap: 0.625rem; }
+
+  .why { background: white; padding: 6rem 2rem; }
   .why-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-  @media (max-width: 700px) { .why-inner { grid-template-columns: 1fr; gap: 3rem; } nav .nav-links { display: none; } }
+  @media (max-width: 700px) { .why-inner { grid-template-columns: 1fr; gap: 3rem; } nav .nav-links { display: none; } .tools-grid { grid-template-columns: 1fr; } }
   .why-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .stat-card { background: white; border-radius: 1.25rem; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.06); text-align: center; }
+  .stat-card { background: var(--snow); border-radius: 1.25rem; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.06); text-align: center; }
   .stat-card .stat-num { font-family: 'DM Serif Display', serif; font-size: 2.25rem; color: var(--bondi); line-height: 1; margin-bottom: 0.375rem; }
   .stat-card .stat-label { font-size: 0.8125rem; color: var(--text-light); font-weight: 400; }
   .stat-card.accent { background: var(--bondi); border-color: var(--bondi); grid-column: span 2; }
@@ -114,6 +135,7 @@
   <div class="nav-logo">dhaataa</div>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
+    <li><a href="#tools">Tools</a></li>
     <li><a href="#why">About</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -165,6 +187,29 @@
   </div>
 </section>
 
+<!-- TOOLS SECTION -->
+<section class="tools" id="tools">
+  <div class="tools-inner">
+    <p class="section-label">Free Tools</p>
+    <h2 class="section-title">Built by Dhaataa,<br>free for the community</h2>
+    <p class="section-intro">We build tools to solve real Apple admin problems. Signed, notarised, and ready to run on your Mac.</p>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-icon">🔑</div>
+        <div class="tool-info">
+          <h3>Iru ADE Manager</h3>
+          <p>Upload and renew multiple ADE tokens in Iru Device Management from a single clean Mac app — no more managing certificates one at a time.</p>
+          <div class="tool-meta">
+            <span class="tool-badge free">Free</span>
+            <span class="tool-badge mac">macOS 13+</span>
+            <a href="/iru-ade-manager" class="tool-download">Learn more →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="why" id="why">
   <div class="why-inner">
     <div>
@@ -184,7 +229,6 @@
   <p class="section-label">Get in touch</p>
   <h2 class="section-title">Let's talk</h2>
   <p class="section-intro" style="margin: 0 auto; max-width: 440px;">Tell us what you're working on — we'll get back to you within one business day.</p>
-
   <div class="contact-form">
     <div class="form-row">
       <div class="form-group">
@@ -235,6 +279,7 @@
   <p class="footer-tagline">Apple specialists, built for business</p>
   <ul class="footer-links">
     <li><a href="#services">Services</a></li>
+    <li><a href="#tools">Tools</a></li>
     <li><a href="#why">About</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#">Privacy policy</a></li>
@@ -249,26 +294,21 @@ function submitForm() {
   var email = document.getElementById('email').value.trim();
   var service = document.getElementById('service').value.trim();
   var message = document.getElementById('message').value.trim();
-
   if (!fname || !email || !message) {
     alert('Please fill in at least your first name, email, and message.');
     return;
   }
-
   var btn = document.getElementById('submitBtn');
   btn.disabled = true;
   btn.textContent = 'Sending...';
-
   var formId = '1FAIpQLSe2tFl_nM4ivz0pNajZeocIE1oenJiu1mn87H1pS-lqptsHDA';
   var url = 'https://docs.google.com/forms/d/e/' + formId + '/formResponse';
-
   var params = new URLSearchParams();
   params.append('entry.2029307066', fname);
   params.append('entry.1749304597', lname);
   params.append('entry.192050759', email);
   params.append('entry.652444199', service);
   params.append('entry.510775136', message);
-
   fetch(url, {
     method: 'POST',
     mode: 'no-cors',
